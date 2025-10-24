@@ -12,9 +12,9 @@ import HomeProduct from './components/HomeProduct.vue';
     <HomeCategory/>
     <HomeBanner/>
   </div>
-    <Homenew />
-    <HomeHot />
-    <HomeProduct />
+  <Homenew />
+  <HomeHot />
+  <HomeProduct />
   <!-- 测试组件复用
   <HomePanel title="新鲜好物" subtitle="为你精选好物">
 

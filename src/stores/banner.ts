@@ -1,3 +1,4 @@
+// 轮播图
 import { getHomeBannerAPI } from "@/apis/Home"
 import { defineStore } from "pinia"
 import { ref } from "vue"

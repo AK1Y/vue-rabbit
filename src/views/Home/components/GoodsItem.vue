@@ -1,16 +1,16 @@
 <!-- HomeProduct页面GoodsItem组件 -->
-<script setup="ts">
+<script setup>
 //定义props
 defineProps({
   goods: {
-    type: Object,
-    default: () => ({})
+      type: Object
   }
 })
+
 </script>
 
 <template>
-  <RouterLink to="/" class="goods-item">
+  <RouterLink :to="`/detail/${goods.id}`" class="goods-item">
     <img :src="goods.picture" alt="" />
     <p class="name ellipsis">{{ goods.name }}</p>
     <p class="desc ellipsis">{{ goods.desc }}</p>

@@ -10,6 +10,8 @@ import { getCategory } from './apis/testAPI'
 // import { useIntersectionObserver } from '@vueuse/core'
 import { en, et } from 'element-plus/es/locales.mjs'
 import { LazyPlugin } from './directives/index.ts'
+import { componentsPlugin } from './components/index.ts'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 //测试接口函数
 // getCategory().then(res=>{
@@ -17,11 +19,13 @@ import { LazyPlugin } from './directives/index.ts'
 // })
 
 const app = createApp(App)
-
-app.use(createPinia())
+const pinia = createPinia()
+//注册持久化插件
+pinia.use(piniaPluginPersistedstate)
+app.use(pinia)
 app.use(router)
 app.use(LazyPlugin)
-
+app.use(componentsPlugin)
 
 app.mount('#app')
 

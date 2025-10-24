@@ -82,8 +82,8 @@ const load = async()=>{
       </el-tabs>
       <!-- 滑动触发load方法 -->
       <div class="body" v-infinite-scroll="load">
-         <!-- 商品列表-->
-        <GoodsItem v-for="goods in goodList" :goods="goods" :key="goods.id"/>
+      <!-- 商品列表-->
+      <GoodsItem v-for="goods in goodList" :goods="goods" :key="goods.id"/>
       </div>
     </div>
   </div>
