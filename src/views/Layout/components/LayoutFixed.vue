@@ -1,6 +1,6 @@
 
 <script setup>
-import { useCategoryStore } from '@/stores/category';
+import { useCategoryStore } from '@/stores/categoryStore';
 import { useScroll } from '@vueuse/core'
 // #以下利用pinia做数据管理，可以不用
 // import { getCategoryAPI } from '@/apis/Layout';

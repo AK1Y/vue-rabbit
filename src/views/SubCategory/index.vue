@@ -37,7 +37,7 @@ onMounted(()=>{
 
 //tab切换回调
 const tabChange=()=>{
-console.log('tab change',reqData.value.softField)
+// console.log('tab change',reqData.value.softField)
 //重置页数
 reqData.value.page=1
 //重新调一遍接口就能满足

@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import { useRouter } from 'vue-router';
-import { useUserStore } from '@/stores/user';
+import { useUserStore } from '@/stores/userStore';
 
 
 const userStore = useUserStore()
@@ -59,7 +59,7 @@ const doLogin = ()=> {
   const {account,password}=form.value
   formRef.value.validate(async(valid)=>{
     //所有表单都通过校验
-    console.log(valid)
+    // console.log(valid)
     //以valid参数做判断条件
     if(valid){
       //TODO LOGIN
