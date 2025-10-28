@@ -6,6 +6,14 @@ import { delCartAPI, findNewCartListAPI, insertCartAPI } from "@/apis/Cart";
 import { useRouter } from "vue-router";
 
 //购物车模块
+
+interface Item{
+  skuId:number
+  count:number
+  selected:boolean
+  price:number
+}
+
 export const useCartStore = defineStore('cart',()=>{
   //拿用户token判断是否登录，未登录则不让加购
   const router = useRouter()
@@ -14,7 +22,7 @@ export const useCartStore = defineStore('cart',()=>{
   const isLogin = computed(()=>userStore.userInfo.token)
 
   //定义state
-  const cartList=ref([])
+  const cartList=ref<Item[]>([])
 
   //定义action
   //获取最新购物车
@@ -30,7 +38,7 @@ export const useCartStore = defineStore('cart',()=>{
     //登陆后的加购物车逻辑
     if(isLogin.value){
       await insertCartAPI(skuId,count)
-      updateNewList()
+      await updateNewList()
     }
     //本地加入购物车逻辑
     else{
@@ -59,7 +67,7 @@ export const useCartStore = defineStore('cart',()=>{
     if(isLogin.value){
       //接口购物车中的删除功能
       await delCartAPI([skuId])
-      updateNewList()
+      await updateNewList()
     }
     else{
       //@ts-ignore
@@ -126,7 +134,8 @@ return{
     isAll,
     selectedCount,
     selectedPrice,
-    clearCart
+    clearCart,
+    updateNewList
     // singleCheck,
     // allCheck
   }

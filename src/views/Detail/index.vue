@@ -1,6 +1,6 @@
 <script setup>
 import { getDetailAPI } from '@/apis/Detail';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref} from 'vue';
 import { useRoute } from 'vue-router';
 import DetailHot from './components/DetailHot.vue';
 import { ElMessage } from 'element-plus';
@@ -29,8 +29,6 @@ const skuChange = (sku)=>{
   console.log(sku)
   skuObj=sku
 }
-
-
 //购物车逻辑
 const cartStore = useCartStore()
 //count

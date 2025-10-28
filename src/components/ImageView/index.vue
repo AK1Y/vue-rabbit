@@ -41,7 +41,7 @@ const PositionY = ref(0)
 watch([elementX,elementY,isOutside],()=>{
   //如果鼠标没有移入盒子，不执行后面逻辑
   if (isOutside.value) return
-  console.log('xy变化了，执行放大镜逻辑')
+  // console.log('xy变化了，执行放大镜逻辑')
 
   //有效范围内控制滑块距离
   //横向
